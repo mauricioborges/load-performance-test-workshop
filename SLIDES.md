@@ -68,6 +68,9 @@
 # how to deal with external providers?
 
 * ¯\_(ツ)_/¯
+* mountebank
+* put in different steps of the pipeline?
+* take this to the test pyramid point of view
 
 ----
 

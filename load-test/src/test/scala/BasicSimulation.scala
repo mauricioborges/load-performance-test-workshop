@@ -8,7 +8,13 @@ class BasicSimulation extends Simulation {
 
   val scn = scenario("Basic Load").exec(http("request_swagger_because_im_stranger").get("/"))
 
-    setUp(scn.inject(rampUsers(50) during (1 minute)).throttle(reachRps(100) in (10 seconds), holdFor(1 minute))
+    setUp(scn.inject(rampUsers(5) during (1 minute)).throttle(reachRps(100) in (10 seconds), holdFor(1 minute))
       .protocols(httpProtocol))
     .assertions(global.responseTime.max.lte(500))
+
+
+  //como eu testo: manter 200 usuários por vez por X minutos?
+
+
+
   }

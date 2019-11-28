@@ -1,6 +1,5 @@
 // basic structure from https://github.com/gatling/gatling-sbt-plugin-demo
 
-
 enablePlugins(GatlingPlugin)
 
 scalaVersion := "2.12.10"
