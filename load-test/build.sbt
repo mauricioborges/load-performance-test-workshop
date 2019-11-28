@@ -1,4 +1,4 @@
-// https://github.com/gatling/gatling-sbt-plugin-demo
+// basic structure from https://github.com/gatling/gatling-sbt-plugin-demo
 
 
 enablePlugins(GatlingPlugin)
