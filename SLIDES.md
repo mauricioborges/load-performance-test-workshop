@@ -76,3 +76,4 @@
 
 * https://gatling.io/docs/current/general/
 * https://github.com/spring-petclinic/spring-petclinic-rest
+* https://github.com/mauricioborges/load-performance-test-workshop.git
