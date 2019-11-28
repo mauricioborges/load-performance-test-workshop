@@ -1,5 +1,6 @@
 import io.gatling.core.Predef._ //using this makes your job easier
 import io.gatling.http.Predef._
+import scala.concurrent.duration._
 
 class BasicSimulation extends Simulation {
 
@@ -7,7 +8,7 @@ class BasicSimulation extends Simulation {
 
   val scn = scenario("Basic Load").exec(http("request_swagger_because_im_stranger").get("/"))
 
-
-
-    setUp(scn.inject(atOnceUsers(1)).protocols(httpProtocol))
+    setUp(scn.inject(rampUsers(50) during (1 minute)).throttle(reachRps(100) in (10 seconds), holdFor(1 minute))
+      .protocols(httpProtocol))
+    .assertions(global.responseTime.max.lte(500))
   }
